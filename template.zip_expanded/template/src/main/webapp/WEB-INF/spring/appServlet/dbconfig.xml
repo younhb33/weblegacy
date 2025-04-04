@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		">
+	<context:annotation-config/>
+	<!-- Connection -->
+	<bean id="dbinfo" class="org.apache.commons.dbcp.BasicDataSource">
+	<!-- oracle.jdbc.OracleDriver : g -->
+	<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+	<property name="url" value="jdbc:oracle:thin:@localhost:1521/xepdb1"/>
+	<property name="username" value="APINK"/>
+	<property name="password" value="a123456"/>
+	</bean>
+</beans>
