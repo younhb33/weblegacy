@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases> <!-- DTO -->
+		<typeAlias alias="api_dto" type="api.api_dto"/>
+		<typeAlias alias="membership_DTO" type="mytld.mycompany.myapp.membership_DTO"/>
+	</typeAliases>
+
+</configuration>

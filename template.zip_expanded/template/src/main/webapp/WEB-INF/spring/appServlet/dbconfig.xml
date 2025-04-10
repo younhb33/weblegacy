@@ -20,4 +20,21 @@
 	<property name="username" value="APINK"/>
 	<property name="password" value="a123456"/>
 	</bean>
+	
+	<!-- mapper -->
+	<bean id="sqlfactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dbinfo"/>
+	<property name="configLocation" value="classpath:/META-INF/config.xml"/>
+	<property name="mapperLocations">
+		<array>
+			<value>classpath:/META-INF/mapper.xml</value>
+			<value>classpath:/META-INF/mapper2.xml</value>
+		</array>
+	</property>
+	</bean>
+	
+	<!-- template -->
+	<bean id="sqltemp" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="close">
+		<constructor-arg name="sqlSessionFactory" ref="sqlfactory"/>
+	</bean>
 </beans>

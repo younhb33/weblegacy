@@ -34,13 +34,19 @@
 		<dependency>
     	<groupId>org.mybatis</groupId>
     	<artifactId>mybatis</artifactId>
-    	<version>3.5.19</version>
+    	<version>3.5.14</version>
+		</dependency>
+		<!-- mybatis-jdbc -->
+		<dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-jdbc</artifactId>
+    	<version>5.3.31</version>
 		</dependency>
 		<!-- mybatis-spring -->
 		<dependency>
     	<groupId>org.mybatis</groupId>
     	<artifactId>mybatis-spring</artifactId>
-    	<version>3.0.4</version>
+    	<version>2.1.2</version>
 		</dependency>
 		<!-- API JSON -->
 		<dependency>

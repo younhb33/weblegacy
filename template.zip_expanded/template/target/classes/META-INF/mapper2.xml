@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mytld.mycompany.myapp.membership_mapper">
+	<!-- Map을 이용하여 하나의 Query문으로 조건에 맞는 SQL이 작동 되도록 설정함 -->
+	<select id="id_info" resultType="membership_DTO" parameterType="Map">
+	select MID,MPASS,MHP,MEMAIL from membership
+	<choose>
+	<when test="part=='login'"> <!-- 로그인 -->
+		<where> <!-- where태그는 where절을 입력시키는 태그 -->
+		mid = #{mid} and mpass = #{mpass}
+		</where>
+	</when>
+	<when test="part== 'myinfo'"> <!-- 자신의 정보확인 및 수정(kakao) -->
+	where mid = #{mid}
+	</when>
+	<otherwise> <!-- 회원전체 리스트 -->
+	order by midx desc
+	</otherwise>
+	</choose>
+	</select>
+	
+	<select id="id_row" resultType="String">
+	select count(*) as ctn from membership where mid = #{mid}  
+	</select>
+	
+	<insert id="join_insert">
+	INSERT INTO MEMBERSHIP (MIDX, MCODE, MID, MNAME, MNICK, MPASS, MEMAIL, MHP, MJOIN, MDATE) 
+	VALUES (MNO.NEXTVAL, #{MCODE}, #{MID}, #{MNAME}, #{MNICK}, #{MPASS}, #{MEMAIL}, #{MHP}, #{MJOIN}, SYSDATE)
+	</insert>
+	
+</mapper>

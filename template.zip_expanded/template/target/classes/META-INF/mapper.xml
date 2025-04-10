@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="api.api_mapper">
+<insert id="pdtest">
+insert into PDS (MIDX,pd1,pd2,pd3,pd4,pd5) values (mno.nextval,#{pd1},#{pd2},#{pd3},#{pd4},#{pd5})
+</insert>
+
+<select id="pdlist" resultType="api_dto">
+select * from pds order by midx desc
+</select>
+
+
+</mapper>
